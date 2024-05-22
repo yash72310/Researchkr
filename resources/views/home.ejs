@@ -1,0 +1,115 @@
+<style>
+ .home{
+  background-color: #b9e45c;
+ }
+ .size{
+  font-optical-sizing: auto;
+  font-size: larger;
+  font-style:normal;
+  font-weight: bolder;
+ }
+ .price{
+  font-weight: 400;
+  font-style: normal;
+ }
+ .pizza_name{
+  font-weight: 900;
+  font-style: normal;
+  font-size: larger;
+ }
+ .home_heading{
+  font-size: 50px;
+  font-weight: 900;
+ }
+
+ .heading_div{
+  width: 60%; 
+  height:50%;
+  background-color: #ccf3b7;
+  border: 1px solid black; 
+  border-radius: 50px;
+   text-align: center; 
+   margin: auto;
+   padding: 20px; 
+   border: #fff;
+
+ }
+
+ @media screen and (max-width:600px) {
+  .home_heading{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .heading_div{
+    margin-top: 20px;
+    width: 100%; 
+    height:100%;
+  }
+  .left{
+    display: none;
+  }
+  .right{
+    display: none;
+  }
+  .middle{
+    margin: auto;
+  }
+ }
+
+
+
+ 
+</style>
+
+<section   class="home"  style="height: 100%;">
+      <div class="main-content clearfix">
+        <div class="main-content-text" style="margin-top: 50px;">
+          <h2 style=" text-align: center; color: #fff; " class="home_heading">HUM KYA KRTE HAIN??</h2>
+          <p style="text-align: center; font-weight: bolder;font-size:20px; color: #fff;">Bacho ki Mushkilen Asaan</p>
+          <div class="heading_div">
+            <h4 style="font-weight: bolder;">You will get the solution all your documentation needed problem here!</h4>
+            <div style="display: flex; margin-top: 10px;">
+              <div class="left">
+                <img src="/img/book.png" style="width: 70%;">
+              </div>
+              <div class="middle" style="width: 50%;">
+                <ul class="topic_list">
+                  <li>Research paper</li>
+                  <li>Report Writing</li>
+                  <li>Synopsis</li>
+                  <li>PPT Making</li>
+                  <li>Writing Combos</li>
+                </ul>
+              </div>
+              <div class="right">
+                <img src="/img/search.png" style="width: 70%;">
+                </div>
+            </div>
+          </div>
+          <h1 style="text-align: center; transform: rotate(90deg); color: #fff; font-size: 30px; font-weight: bolder; margin-top: 30px;">>></h1>
+        </div>
+      </div>
+</section>
+
+<h1 class="text-xl font-bold mb-8 px-10" id="all_food" style="text-align: center;margin-top: 30px;color: #90D26D;font-size: 2rem;font-family:Poppins", sans-serif;">Check Out The Items</h1>
+
+<div class="menu" style="background-color: #c4f48575;">
+    <% pizzas.forEach(function(pizza) { %>
+    <div class="menu-item" style="border: 1px solid white; border-radius: 10px; text-align: center;">
+      <!-- <img src="/img/<%= pizza.image %>" alt="Burger"  loading="lazy"> -->
+      <h3 class="pizza_name"><%= pizza.name %></h3>
+      <p class="name"><%= pizza.plag%></p>
+      <p class="name"><%= pizza.pages%></p>
+      <p class="name"><%= pizza.formatting%></p>
+      <p class="name"><%= pizza.submission%></p>
+      <span class="size" style="background-color: #9adb4475;padding: 10px 10px 10px 10px; border: 1px solid white; border-radius: 10px;"><%= pizza.completion_time%></span>
+      <p class="price">Pricing-: ₹<%= pizza.price %></p>
+      <button data-pizza="<%= JSON.stringify(pizza) %>"
+        class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold btn-cart" style="background-color: #90D26D; margin: auto;">
+        <span style="color: black; font-weight: bolder;">+</span>
+        <span class="ml-4" style="color: black; font-weight: bold;">ADD</span>
+    </button>
+    </div>
+    <% }) %>
+</div>
+
